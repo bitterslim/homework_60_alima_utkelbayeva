@@ -1,0 +1,47 @@
+<div class="pagination">
+
+    <span class="step-links">
+
+        <a href="?page=1">&laquo; First Page</a>
+
+        {% if page_obj.has_previous %}
+
+            <a href="?page={{ page_obj.previous_page_number }}">Previous Page</a>
+
+        {% else %}
+
+            <span class="page-disabled">Previous Page</span>
+
+        {% endif %}
+
+
+
+        <form class="current-page" method="get">
+
+            <label for="page">
+
+                Страница <input type="text" name="page" id="page" value="{{ page_obj.number }}">
+
+                из {{ page_obj.paginator.num_pages }}.
+
+            </label>
+
+        </form>
+
+
+
+        {% if page_obj.has_next %}
+
+            <a href="?page={{ page_obj.next_page_number }}">Next Page</a>
+
+        {% else %}
+
+            <span class="page-disabled">Next Page</span>
+
+        {% endif %}
+
+        <a href="?page={{ page_obj.paginator.num_pages }}">To the end &raquo;</a>
+
+    </span>
+
+</div>
