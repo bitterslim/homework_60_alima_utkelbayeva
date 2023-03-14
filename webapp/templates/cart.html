@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="container">
-    <h1>Корзина</h1>
+    <h1>Cart</h1>
     <table class="table">
         <thead>
             <tr>
-                <th>Наименование</th>
-                <th>Цена</th>
-                <th>Количество</th>
-                <th>Сумма</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
             </tr>
         </thead>
         <tbody>
@@ -20,7 +19,7 @@
                 </tr>
             {% empty %}
                 <tr>
-                    <td colspan="4">Корзина пуста</td>
+                    <td colspan="4">Cart is empty</td>
                 </tr>
             {% endfor %}
         </tbody>
